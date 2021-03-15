@@ -1,4 +1,4 @@
-export const formatPhone = (phone): string => {
+export const formatPhone = (phone: string): string => {
   const newPhone = phone.replace(/\D/g, '').slice(-10);
   const part1 = newPhone.slice(0, 3);
   const part2 = newPhone.slice(3, 6);
