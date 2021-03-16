@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
-import { formatPhone } from 'utils/dist';
+import { formatPhone, isWindowsPhone } from 'utils';
 
 function App() {
+  console.log('isWindows', isWindowsPhone());
   return (
     <div className="App">
       <header className="App-header">
@@ -17,7 +18,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {formatPhone('87474137345')}
+          {formatPhone('8777-777-7777')}
         </a>
       </header>
     </div>
