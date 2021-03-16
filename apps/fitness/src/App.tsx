@@ -1,10 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 
-import { formatPhone, isWindowsPhone } from 'utils';
+import { formatPhone } from 'utils/formatPhone';
 
 function App() {
-  console.log('isWindows', isWindowsPhone());
   return (
     <div className="App">
       <header className="App-header">

@@ -5,7 +5,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "utils": "packages/utils"
+      "utils": "packages/utils",
+      "fitness": "apps/fitness"
     }
   },
   "workspaces": [
