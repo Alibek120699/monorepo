@@ -1,26 +1,64 @@
+import styled from 'styled-components';
 import logo from './logo.svg';
-import './App.css';
 
 import { formatPhone } from 'utils/formatPhone';
+import './App.css';
+
+const Container = styled.div`
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  @media (max-width: 768px) {
+    background-color: red;
+  }
+`;
+
+const Logo = styled.img`
+  height: 200px;
+  @media (max-width: 768px) {
+    height: 100px;
+  }
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  animation: App-logo-spin infinite 20s linear;
+`;
+
+const Code = styled.code<{ primary?: boolean }>`
+  font-size: 24px;
+  color: ${(props) => (props.primary ? 'white' : props.theme.colors.primary)};
+  :hover {
+    font-size: 36px;
+    color: green;
+    transition: ease 1s;
+  }
+`;
+
+const Link = styled.a`
+  color: white;
+  font-weight: bold;
+`;
 
 function App() {
   return (
-    <div className="App">
+    <Container className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Logo src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Edit <Code>src/App.tsx</Code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           {formatPhone('8777-777-7777')}
-        </a>
+        </Link>
       </header>
-    </div>
+    </Container>
   );
 }
 
