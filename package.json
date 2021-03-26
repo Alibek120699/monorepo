@@ -1,14 +1,6 @@
 {
   "private": true,
   "name": "1fit-monorepo",
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "utils": "packages/utils",
-      "fitness": "apps/fitness"
-    }
-  },
   "workspaces": [
     "apps/*",
     "packages/*"
