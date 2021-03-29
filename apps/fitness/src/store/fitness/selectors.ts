@@ -4,6 +4,7 @@ import { API_URL } from 'src/store/server';
 import { request } from 'src/store/axios';
 
 import * as atoms from './atoms';
+import * as parsers from './parsers';
 
 export const FitnessListSelector = selector({
   key: 'FitnessListSelector',
@@ -13,7 +14,7 @@ export const FitnessListSelector = selector({
       limit: get(atoms.LimitAtom),
       offset: get(atoms.PageAtom),
     });
-    const fitnesses = await res.data.fitness_centres;
+    const fitnesses = await res.data.fitness_centres.map(parsers.parseFitness);
     return fitnesses;
   },
 });
