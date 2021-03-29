@@ -6,6 +6,9 @@ import { Fitness } from 'src/store/fitness/models';
 export default function FitnessList() {
   const fitnesses = useRecoilValue(FitnessListSelector);
 
+  if (fitnesses === 'error') {
+    return <div>error</div>;
+  }
   return (
     <>
       <h1>Selector</h1>

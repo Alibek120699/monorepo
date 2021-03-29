@@ -14,7 +14,19 @@ export const FitnessListSelector = selector({
       limit: get(atoms.LimitAtom),
       offset: get(atoms.PageAtom),
     });
+    if (res.data.code) {
+      return 'error';
+    }
     const fitnesses = await res.data.fitness_centres.map(parsers.parseFitness);
     return fitnesses;
   },
+  // set: async ({ get, set }) => {
+  //   const url = `${API_URL}/main/fitness_centres_web/`;
+  //   const res = await request.post(url, {
+  //     limit: get(atoms.LimitAtom),
+  //     offset: get(atoms.PageAtom),
+  //   });
+  //   const fitnesses = await res.data.fitness_centres.map(parsers.parseFitness);
+  //   set(atoms.FitnessListAtom, [...get(atoms.FitnessListAtom), ...fitnesses]);
+  // },
 });
