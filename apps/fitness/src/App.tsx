@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { LimitAtom, PageAtom } from 'src/store/fitness/atoms';
 import FitnessList from 'src/FitnessList';
 
+import { Box } from 'mychakra';
+
 const Flex = styled.div<{ dir?: string }>`
   display: flex;
   flex-direction: ${(props) => props.dir || 'row'};
@@ -35,6 +37,7 @@ function App() {
         <option value={10}>10</option>
         <option value={15}>15</option>
       </select>
+      <Box>my box</Box>
       <Suspense fallback={<div>Loading...</div>}>
         <FitnessList />
       </Suspense>
