@@ -1,10 +1,9 @@
 import { Suspense } from 'react';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 
-import { TodoListAtom } from 'src/store/atoms';
-import Todolist from 'src/Todolist';
-import { Todo } from 'src/store/models';
+import { LimitAtom, PageAtom } from 'src/store/fitness/atoms';
+import FitnessList from 'src/FitnessList';
 
 const Flex = styled.div<{ dir?: string }>`
   display: flex;
@@ -14,16 +13,30 @@ const Flex = styled.div<{ dir?: string }>`
 `;
 
 function App() {
-  const todos = useRecoilValue(TodoListAtom);
+  const [limit, setLimit] = useRecoilState(LimitAtom);
+  const [page, setPage] = useRecoilState(PageAtom);
+
+  const changePage = (p: number) => setPage(p);
+
+  const changeLimit = ({ target: { value } }: any) => {
+    setLimit(parseInt(value));
+  };
 
   return (
     <Flex dir="column">
-      <h1>Atoms</h1>
-      {todos.map((t: Todo) => (
-        <div>{t.title}</div>
-      ))}
+      <button disabled={page === 5} onClick={() => changePage(page + 1)}>
+        next
+      </button>
+      <button disabled={page === 1} onClick={() => changePage(page - 1)}>
+        prev
+      </button>
+      <select value={limit} onChange={changeLimit}>
+        <option value={5}>5</option>
+        <option value={10}>10</option>
+        <option value={15}>15</option>
+      </select>
       <Suspense fallback={<div>Loading...</div>}>
-        <Todolist />
+        <FitnessList />
       </Suspense>
     </Flex>
   );
