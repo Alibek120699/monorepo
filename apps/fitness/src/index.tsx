@@ -4,18 +4,12 @@ import { RecoilRoot } from 'recoil';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'mychakra';
 
 import './index.css';
 
-const theme = {
-  colors: {
-    primary: 'hotpink',
-  },
-};
-
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
+  <ThemeProvider>
     <React.StrictMode>
       <RecoilRoot>
         <App />

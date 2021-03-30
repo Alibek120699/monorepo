@@ -1,12 +1,13 @@
-// import { Suspense } from 'react';
+import { Suspense } from 'react';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 
 import { LimitAtom, PageAtom } from 'src/store/fitness/atoms';
-// import FitnessList from 'src/FitnessList';
+import FitnessList from 'src/FitnessList';
+import Loader from 'src/components/atoms/Loader';
 
 import { Box } from 'mychakra';
-import { formatPhone } from 'utils/dist';
+import { formatPhone } from 'utils';
 
 const Flex = styled.div<{ dir?: string }>`
   display: flex;
@@ -39,12 +40,14 @@ function App() {
         <option value={10}>10</option>
         <option value={15}>15</option>
       </select>
-      <Box bg="red" color="yellow" p={5}>
+      <Box bg="lightgreen" color="grey" p={5}>
         my box
       </Box>
-      {/* <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <FitnessList />
-      </Suspense> */}
+      </Suspense>
+
+      <Loader />
     </Flex>
   );
 }
