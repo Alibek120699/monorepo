@@ -39,7 +39,7 @@ function App() {
         <option value={10}>10</option>
         <option value={15}>15</option>
       </select>
-      <Box color="yellow" p={5}>
+      <Box bg="red" color="yellow" p={5}>
         my box
       </Box>
       {/* <Suspense fallback={<div>Loading...</div>}>
