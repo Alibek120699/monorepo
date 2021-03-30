@@ -1,9 +1,9 @@
-import { Suspense } from 'react';
+// import { Suspense } from 'react';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 
 import { LimitAtom, PageAtom } from 'src/store/fitness/atoms';
-import FitnessList from 'src/FitnessList';
+// import FitnessList from 'src/FitnessList';
 
 import { Box } from 'mychakra';
 
@@ -37,10 +37,12 @@ function App() {
         <option value={10}>10</option>
         <option value={15}>15</option>
       </select>
-      <Box>my box</Box>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Box color="yellow" p={5}>
+        my box
+      </Box>
+      {/* <Suspense fallback={<div>Loading...</div>}>
         <FitnessList />
-      </Suspense>
+      </Suspense> */}
     </Flex>
   );
 }
