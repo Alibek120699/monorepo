@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import logo from './logo.svg';
 
-import { formatPhone } from 'utils/formatPhone';
+import { formatPhone } from 'utils/dist';
 import './App.css';
 
 const Container = styled.div`

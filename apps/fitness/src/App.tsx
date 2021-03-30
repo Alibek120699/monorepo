@@ -6,6 +6,7 @@ import { LimitAtom, PageAtom } from 'src/store/fitness/atoms';
 // import FitnessList from 'src/FitnessList';
 
 import { Box } from 'mychakra';
+import { formatPhone } from 'utils/dist';
 
 const Flex = styled.div<{ dir?: string }>`
   display: flex;
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <Flex dir="column">
+      <h2>{formatPhone('77774561232')}</h2>
       <button disabled={page === 5} onClick={changePage(page + 1)}>
         next
       </button>

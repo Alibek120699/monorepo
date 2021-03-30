@@ -4,10 +4,10 @@
   "author": "Alibek",
   "license": "MIT",
   "description": "additional util functions",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "/"
+    "dist"
   ],
   "scripts": {
     "build": "tsc"
