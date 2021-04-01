@@ -46,8 +46,6 @@ function App() {
       <Suspense fallback={<Loader />}>
         <FitnessList />
       </Suspense>
-
-      <Loader />
     </Flex>
   );
 }
