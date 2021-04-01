@@ -4,12 +4,22 @@ import { RecoilRoot } from 'recoil';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ThemeProvider } from 'mychakra';
+import { ThemeProvider, extendTheme } from 'mychakra';
 
 import './index.css';
 
+const theme = extendTheme({
+  colors: {
+    brand: {
+      100: '#1aa71a',
+      // ...
+      900: '#1a202c',
+    },
+  },
+});
+
 ReactDOM.render(
-  <ThemeProvider>
+  <ThemeProvider theme={theme}>
     <React.StrictMode>
       <RecoilRoot>
         <App />
