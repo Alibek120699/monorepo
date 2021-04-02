@@ -40,7 +40,7 @@ function App() {
         <option value={10}>10</option>
         <option value={15}>15</option>
       </select>
-      <Box bg="brand.100" color="white" p={5}>
+      <Box bg="brand.100" color="white" p={6}>
         my box
       </Box>
       <Suspense fallback={<Loader />}>
