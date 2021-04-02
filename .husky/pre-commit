@@ -3,4 +3,4 @@
 
 yarn lint-staged
 changelog generate
-git add
+git add CHANGELOG.md
